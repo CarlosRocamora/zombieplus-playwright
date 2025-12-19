@@ -1,13 +1,13 @@
 const { expect } = require('@playwright/test')
 
-export class LandingPage {
+export class Leads {
 
     constructor(page) {
         this.page = page
     }
 
     async visit() {
-        await this.page.goto('http://localhost:3000')
+        await this.page.goto('/')
     }
 
     async openLeadModal() {
@@ -29,6 +29,5 @@ export class LandingPage {
     async alertHaveText(target) {
         await expect(this.page.locator('.alert')).toHaveText(target)
     }
-
 }
 
